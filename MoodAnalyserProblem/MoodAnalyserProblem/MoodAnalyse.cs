@@ -25,7 +25,7 @@ namespace MoodAnalyserProblem
             {
                 if (this.message == null)
                 {
-                    throw new MoodNullException("Mood can not be null");
+                    throw new MoodNullException("Mood should Happy");
                 }
                 if (message.Contains("Sad"))
                 {
@@ -38,7 +38,7 @@ namespace MoodAnalyserProblem
             }
             catch(MoodNullException e)
             {
-                Console.WriteLine("Exception: " + e.Message);
+                Console.WriteLine("Happy: " + e.Message);
             }
             return message;
         }
