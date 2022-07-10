@@ -11,17 +11,22 @@ namespace TestProject1
         }
 
         [Test]
-        public void CheckMood_returnHappy()
+        public void HandleException()
         {
+            try
+            {
+                //Arrange
+                MoodAnalyse moodAnalyse = new MoodAnalyse(null);
 
-            //Arrange
-            MoodAnalyse moodAnalyse = new MoodAnalyse("I am in Happy Mood");
-
-            //Act
-            string checkmood = moodAnalyse.AnalyseMood();
-
-            //Assert
-            Assert.AreEqual("HAPPY", checkmood);
+                //Act
+                string checkmood = moodAnalyse.AnalyseMood();
+            }
+            catch(MoodNullException e)
+            {
+                //Assert
+                Assert.AreEqual("Exception:", e.Message);
+            }
+           
         }
     }
 }
