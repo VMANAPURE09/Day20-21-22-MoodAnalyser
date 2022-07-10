@@ -10,38 +10,38 @@ namespace TestProject1
         {
         }
 
-        [Test]
-        public void GivenNullShouldReturnNullException()
-        {
-            string expected = "Mood should not be null";
-            MoodAnalyse moodAnalyser = new MoodAnalyse(null);
-            try
-            {
-                //ACT
-                string actual = moodAnalyser.AnalyseMood();
-            }
-            catch (CustomMoodAnalyserException e)
-            {
-                //Assert
-                Assert.AreEqual("Exception:", e.Message);
-            }
-           
-        }
         //[Test]
-        //public void GivenEmptyShouldReturnEmptyException()
+        //public void GivenNullShouldReturnNullException()
         //{
-        //    string expected = "Message should not be empty";
+        //    string expected = "Mood should not be null";
         //    MoodAnalyse moodAnalyser = new MoodAnalyse(null);
         //    try
         //    {
         //        //ACT
         //        string actual = moodAnalyser.AnalyseMood();
         //    }
-        //    catch (CustomMoodAnalyserException ex)
+        //    catch (CustomMoodAnalyserException e)
         //    {
-        //        //ASSERT
-        //        Assert.AreEqual(expected, ex.Message);
+        //        //Assert
+        //        Assert.AreEqual("Exception:", e.Message);
         //    }
+
         //}
+        [Test]
+        public void GivenEmptyShouldReturnEmptyException()
+        {
+            string expected = "Message should not be empty";
+            MoodAnalyse moodAnalyser = new MoodAnalyse(null);
+            try
+            {
+                //ACT
+                string actual = moodAnalyser.AnalyseMood();
+            }
+            catch (CustomMoodAnalyserException ex)
+            {
+                //ASSERT
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
     }
 }
