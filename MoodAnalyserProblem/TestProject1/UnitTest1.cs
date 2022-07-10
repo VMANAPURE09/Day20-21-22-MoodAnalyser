@@ -11,17 +11,17 @@ namespace TestProject1
         }
 
         [Test]
-        public void CheckMood_returnSad()
+        public void CheckMood_returnHappy()
         {
 
             //Arrange
-            MoodAnalyse moodAnalyse = new MoodAnalyse("I am in Sad Mood");
+            MoodAnalyse moodAnalyse = new MoodAnalyse("I am in Happy Mood");
 
             //Act
             string checkmood = moodAnalyse.AnalyseMood();
 
             //Assert
-            Assert.AreEqual("SAD", checkmood);
+            Assert.AreEqual("HAPPY", checkmood);
         }
     }
 }
