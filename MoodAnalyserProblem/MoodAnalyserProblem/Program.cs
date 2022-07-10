@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoodAnalyzerProblem;
+using System;
 
 namespace MoodAnalyserProblem
 {
@@ -6,9 +7,10 @@ namespace MoodAnalyserProblem
     {
         static void Main(string[] args)
         {
-            MoodAnalyse moodanalyse = new MoodAnalyse(" ");
-            string checkmood = moodanalyse.AnalyseMood();
-            Console.WriteLine(checkmood);
+            MoodAnalyserFactory moodanalysefactory = new MoodAnalyserFactory();
+
+            moodanalysefactory.CreateMoodAnalyserUsingParametrisedConstructor("MoodAnalyse", "MoodAnalyse", "Happy");
+
         }
     }
 }
