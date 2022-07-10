@@ -23,11 +23,17 @@ namespace MoodAnalyserProblem
         {
             try
             {
-                if (this.message == null)
+                if (message == null)
                 {
-                    throw new MoodNullException("Mood should Happy");
+                    throw new CustomMoodAnalyserException(CustomMoodAnalyserException.ExceptionType.Null_Message, "Mood should not be null");
                 }
-                if (message.Contains("Sad"))
+                if (this.message.Contains(string.Empty))
+                {
+                    throw new CustomMoodAnalyserException(CustomMoodAnalyserException.ExceptionType.Empty_Message, "Mood should not be empty");
+
+                }
+
+                if (message.ToLower().Contains("sad"))
                 {
                     return "SAD";
                 }
@@ -36,9 +42,9 @@ namespace MoodAnalyserProblem
                     return "HAPPY";
                 }
             }
-            catch(MoodNullException e)
+            catch(CustomMoodAnalyserException e)
             {
-                Console.WriteLine("Happy: " + e.Message);
+                Console.WriteLine(e.Message);
             }
             return message;
         }

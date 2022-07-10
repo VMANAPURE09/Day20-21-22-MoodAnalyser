@@ -11,22 +11,37 @@ namespace TestProject1
         }
 
         [Test]
-        public void HandleException()
+        public void GivenNullShouldReturnNullException()
         {
+            string expected = "Mood should not be null";
+            MoodAnalyse moodAnalyser = new MoodAnalyse(null);
             try
             {
-                //Arrange
-                MoodAnalyse moodAnalyse = new MoodAnalyse(null);
-
-                //Act
-                string checkmood = moodAnalyse.AnalyseMood();
+                //ACT
+                string actual = moodAnalyser.AnalyseMood();
             }
-            catch(MoodNullException e)
+            catch (CustomMoodAnalyserException e)
             {
                 //Assert
                 Assert.AreEqual("Exception:", e.Message);
             }
            
         }
+        //[Test]
+        //public void GivenEmptyShouldReturnEmptyException()
+        //{
+        //    string expected = "Message should not be empty";
+        //    MoodAnalyse moodAnalyser = new MoodAnalyse(null);
+        //    try
+        //    {
+        //        //ACT
+        //        string actual = moodAnalyser.AnalyseMood();
+        //    }
+        //    catch (CustomMoodAnalyserException ex)
+        //    {
+        //        //ASSERT
+        //        Assert.AreEqual(expected, ex.Message);
+        //    }
+        //}
     }
 }
