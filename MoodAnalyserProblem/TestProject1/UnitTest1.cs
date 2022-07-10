@@ -11,18 +11,6 @@ namespace TestProject1
         }
 
         [Test]
-        public void CheckHappyMood()
-        {
-            //Arrange
-            MoodAnalyse moodAnalyse = new MoodAnalyse("I am in Happy Mood");
-
-            //Act
-            string checkhappymood = moodAnalyse.AnalyseMood();
-
-            //Assert
-            Assert.AreEqual("HAPPY", checkhappymood);
-        }
-        [Test]
         public void CheckSadMood()
         {
 
